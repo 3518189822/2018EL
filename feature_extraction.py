@@ -8,10 +8,15 @@ import numpy as np
 # from djangoapp import models
 from tools import image_show
 
+'''
 all_tz = 'D:/Documents/Desktop/test/5/'  # EL 全特征图存放路径
 dytzqt = 'D:/Documents/Desktop/test/6/'  # EL 全单一特征图存放看路径
 dytz = 'D:/Documents/Desktop/test/7/'  # EL 子单一特征图存放路径
+'''
 
+all_tz = '//192.168.0.253/share/ittest/elimage/tzqt_el_path/'  # EL 全特征图存放路径
+dytzqt = '//192.168.0.253/share/ittest/elimage/dytzqt_el_path/'  # EL 全单一特征图存放看路径
+dytz = '//192.168.0.253/share/ittest/elimage/dytz_el_path/'  # EL 子单一特征图存放路径
 
 def Contours_feature(picture):
     """

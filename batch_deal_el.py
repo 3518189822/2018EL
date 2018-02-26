@@ -27,9 +27,14 @@ import threading
 import datetime, madian
 import numpy as np
 
-
+'''
 constract_path = 'D:/Documents/Desktop/test/3/'  # EL调整对比度后存放路径
 Rectangle_path = 'D:/Documents/Desktop/test/4/'  # EL画出边缘轮廓后存放路径
+'''
+
+constract_path = '//192.168.0.253/share/ittest/elimage/constract_el_path/'  # EL调整对比度后存放路径
+Rectangle_path = '//192.168.0.253/share/ittest/elimage/rectangle_el_path/'  # EL画出边缘轮廓后存放路径
+
 
 # 批处理流程写为主方法函数，并引入threading线程模块，对不同路径下的待处理图片作多线程计算。
 def main(need_deal_path):
