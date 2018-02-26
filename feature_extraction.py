@@ -162,11 +162,17 @@ def save_bounding_picture(one_countours, two_countours, original_need_deal_el_pa
         dytz_el_path = dytz + '%s_%s_%s_s.jpg' % (filename, 1, j)
 
         # 往表里写数据
-        conn = pymysql.connect(host="127.0.0.1", port=3306, user="root", passwd="root", db="test", charset="utf8")
+        '''
+        conn = pymysql.connect(host="127.0.0.1", port=3306, user="root", passwd="root", db="ak_zuul", charset="utf8")
         cur = conn.cursor()
-        sql = "INSERT INTO ELimgtest (original_el_path, constract_el_path,rectangle_el_path,dytzqt_el_path,tzqt_el_path,dytz_el_path) VALUES ( '%s', '%s','%s', '%s', '%s','%s')"
+        sql = "INSERT INTO ELimgtest (original_el_path, constract_el_path,rectangle_el_path,tzqt_el_path,dytzqt_el_path,dytz_el_path) VALUES ( '%s', '%s','%s', '%s', '%s','%s')"
+
+        '''
+        conn = pymysql.connect(host="192.168.0.32", port=3306, user="wxdb", passwd="wxdb", db="ak_zuul", charset="utf8")
+        cur = conn.cursor()
+        sql = "INSERT INTO aiko_elprint (original_el_path, constract_el_path,rectangle_el_path,tzqt_el_path,dytzqt_el_path,dytz_el_path) VALUES ( '%s', '%s','%s', '%s', '%s','%s')"
         data = (
-            original_need_deal_el_path, constract_el_path, rectangle_el_path, dytzqt_el_path, tzqt_el_path,
+            original_need_deal_el_path, constract_el_path, rectangle_el_path, tzqt_el_path, dytzqt_el_path,
             dytz_el_path)
         cur.execute(sql % data)
         conn.commit()
